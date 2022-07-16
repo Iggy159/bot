@@ -64,19 +64,19 @@ dirLight.shadow.camera.right = 120;
 scene.add( dirLight );
 
 // ground
-const mesh = new THREE.Mesh( new THREE.PlaneGeometry( 1000, 1000 ), new THREE.MeshPhongMaterial( { color: 0x999999, depthWrite: false } ) );
+const mesh = new THREE.Mesh( new THREE.PlaneGeometry( 2000, 2000 ), new THREE.MeshPhongMaterial( { color: 0x999999, depthWrite: false } ) );
 mesh.rotation.x = - Math.PI / 2;
 mesh.receiveShadow = true;
 scene.add( mesh );
 
-const grid = new THREE.GridHelper( 1000, 10, 0x000000, 0x000000 );
+const grid = new THREE.GridHelper( 2000, 10, 0x000000, 0x000000 );
 grid.material.opacity = 0.2;
 grid.material.transparent = true;
 scene.add( grid );
 
 // model
 const loader = new FBXLoader();
-loader.load( 'Wave.fbx', function ( object ) {
+loader.load( 'Walking.fbx', function ( object ) {
 
     mixer = new THREE.AnimationMixer( object );
     
